@@ -4,25 +4,27 @@ import { StatusBar } from 'expo-status-bar';
 import { Image } from "@rneui/base";
 import { Button, Input } from "@rneui/themed";
 import { KeyboardAvoidingView } from "react-native";
-import { getAuth } from "firebase/auth";
+import { getAuth,signInWithEmailAndPassword  } from "firebase/auth";
 const LoginScreen = ({navigation}) => {
   const auth = getAuth();
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
 
-
   useEffect(() => {
     const unsubscribe= auth.onAuthStateChanged(authUser=>{
+      
         if(authUser){
-        
             navigation.replace("Home")
         }
     })
     return unsubscribe;
-  }, [auth])
+  }, [navigation,auth])
   
 
-  const signIn = () => {};
+  const signIn = () => {
+
+    signInWithEmailAndPassword(auth,email,password).catch(e=>alert(e))
+  };
 
 
   return (
@@ -46,6 +48,7 @@ const LoginScreen = ({navigation}) => {
           secureTextEntry
           value={password}
           onChangeText={(text) => setpassword(text)}
+          onSubmitEditing={signIn}
         />
         <Button
           containerStyle={styles.button}

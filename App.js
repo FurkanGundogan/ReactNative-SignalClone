@@ -19,13 +19,13 @@ export default function App() {
   const app = initializeApp(firebaseConfig);
   const Stack = createNativeStackNavigator();
   const globalScreenOptions = {
-    headerStyle: { backgroundColor: "#2C6BED" },
+    headerStyle: { backgroundColor: "#2C6BED"},
     headerTitleStyle: { color: "white" },
     headerTintColor: "white",
   };
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={globalScreenOptions}>
+      <Stack.Navigator initialRouteName="Login" screenOptions={globalScreenOptions}>
      
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
