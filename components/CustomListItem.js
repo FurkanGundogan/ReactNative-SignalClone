@@ -4,7 +4,7 @@ import { Avatar, ListItem } from "@rneui/base";
 
 const CustomListItem = ({ id, chatName, enterChat }) => {
   return (
-    <ListItem>
+    <ListItem key={id} bottomDivider>
       <Avatar
         source={{
           uri: "https://cdn-icons-png.flaticon.com/512/147/147144.png",
@@ -12,7 +12,7 @@ const CustomListItem = ({ id, chatName, enterChat }) => {
       />
       <ListItem.Content>
         <ListItem.Title style={{ fontWeight: "800" }}>
-          Youtube Chat
+          {chatName}
         </ListItem.Title>
         <ListItem.Subtitle numberOfLines={1} ellipsizeMode="tail">
           Test subtitle
