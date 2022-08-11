@@ -92,6 +92,7 @@ const HomeScreen = ({ navigation }) => {
  }, [db])
  */
 
+
   const querySnapshot = async (db) => {
     setloading(true)
     let allItems = [];
@@ -110,6 +111,13 @@ const HomeScreen = ({ navigation }) => {
     setloading(false)
   };
 
+  const enterChat = (id,chatName) =>{
+    navigation.navigate("Chat",{
+      id,
+      chatName
+    })
+   }
+
   return (
     <SafeAreaView>
       <ScrollView style={styles.container}>
@@ -119,7 +127,7 @@ const HomeScreen = ({ navigation }) => {
         </View>
         }
         {chats?.map(({ id, data: { chatName } }) => (
-          <CustomListItem key={id} id={id} chatName={chatName} />
+          <CustomListItem key={id} id={id} chatName={chatName} enterChat={enterChat} />
         ))}
       </ScrollView>
     </SafeAreaView>

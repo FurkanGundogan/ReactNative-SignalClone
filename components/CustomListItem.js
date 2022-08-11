@@ -4,7 +4,7 @@ import { Avatar, ListItem } from "@rneui/base";
 
 const CustomListItem = ({ id, chatName, enterChat }) => {
   return (
-    <ListItem key={id} bottomDivider>
+    <ListItem key={id} bottomDivider onPress={()=>enterChat(id,chatName)}>
       <Avatar
         source={{
           uri: "https://cdn-icons-png.flaticon.com/512/147/147144.png",

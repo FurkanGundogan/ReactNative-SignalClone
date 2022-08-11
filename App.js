@@ -6,6 +6,7 @@ import RegisterScreen from "./screens/RegisterScreen";
 import HomeScreen from "./screens/HomeScreen";
 import { initializeApp } from 'firebase/app';
 import AddChatScreen from "./screens/AddChatScreen";
+import ChatScreen from "./screens/ChatScreen";
 
 export default function App() {
   
@@ -33,6 +34,7 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
         <Stack.Screen name="AddChat" component={AddChatScreen} />
+        <Stack.Screen name="Chat" component={ChatScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
