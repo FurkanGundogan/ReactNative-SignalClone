@@ -7,8 +7,8 @@ import { KeyboardAvoidingView } from "react-native";
 import { getAuth,signInWithEmailAndPassword  } from "firebase/auth";
 const LoginScreen = ({navigation}) => {
   const auth = getAuth();
-  const [email, setemail] = useState("");
-  const [password, setpassword] = useState("");
+  const [email, setemail] = useState("furu@gmail.com");
+  const [password, setpassword] = useState("111111");
 
   useEffect(() => {
     const unsubscribe= auth.onAuthStateChanged(authUser=>{
