@@ -6,6 +6,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
   ActivityIndicator,
+  Platform
 } from "react-native";
 import React, { useCallback, useLayoutEffect, useState } from "react";
 import { getAuth, signOut } from "firebase/auth";
@@ -32,7 +33,7 @@ const HomeScreen = ({ navigation }) => {
       headerTitleStyle: { color: "black" },
       headerTintColor: "black",
       headerLeft: () => (
-        <View style={{ marginRight: 20 }}>
+        <View style={{ marginRight: 20,paddingLeft:Platform.OS==='android'?0:20 }}>
           <TouchableOpacity onPress={signOutUser} activeOpacity={0.5}>
             <Avatar
               rounded
@@ -45,7 +46,9 @@ const HomeScreen = ({ navigation }) => {
       ),
       headerRight: () => (
         <View
+      
           style={{
+            paddingRight:Platform.OS==='android'?0:20,
             flexDirection: "row",
             justifyContent: "space-between",
             width: 80,
