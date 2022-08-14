@@ -24,7 +24,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.furu1414.SignalClone"
     },
     "web": {
       "favicon": "./assets/favicon.png"
